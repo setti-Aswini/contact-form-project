@@ -1,26 +1,21 @@
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-  const name = document.getElementById('name').value.trim();
-  const email = document.getElementById('email').value.trim();
-  const message = document.getElementById('message').value.trim();
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-  // Basic validation
-  if (name.length < 3) {
-    alert('Name must be at least 3 characters long.');
-    event.preventDefault();
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !message) {
+    alert("Please fill in all fields.");
     return;
   }
 
-  if (!email.includes('@') || !email.includes('.')) {
-    alert('Please enter a valid email address.');
-    event.preventDefault();
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address.");
     return;
   }
 
-  if (message.length < 5) {
-    alert('Message must be at least 5 characters long.');
-    event.preventDefault();
-    return;
-  }
-
-  alert('Form submitted successfully!');
+  document.getElementById("successMessage").textContent = "Form submitted successfully!";
+  document.getElementById("contactForm").reset();
 });
