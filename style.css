@@ -1,45 +1,73 @@
+/* General body styles */
 body {
   font-family: Arial, sans-serif;
-  padding: 20px;
-  max-width: 600px;
-  margin: auto;
+  padding: 40px;
+  background-color: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h1 {
-  text-align: center;
-}
-
+/* Form container */
 form {
-  background: #f7f7f7;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-input, textarea, button {
+  background: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  max-width: 400px;
 }
 
+/* Form headings */
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Labels and inputs */
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #555;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Submit button */
 button {
-  background-color: #007BFF;
+  background-color: #4caf50;
   color: white;
+  padding: 12px;
+  margin-top: 20px;
   border: none;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 16px;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #45a049;
 }
-@media (max-width: 480px) {
-  body {
-    padding: 10px;
-  }
 
-  input, textarea, button {
-    font-size: 16px;
-  }
+/* Success message */
+#successMessage {
+  margin-top: 20px;
+  color: green;
+  font-weight: bold;
+  text-align: center;
 }
